@@ -60,7 +60,7 @@ function startGame(){
     document.getElementById("guesses-left").innerHTML = numGuesses;
 
     // It prints the blanks in the beginning of each round in the Html
-    document.getElementById("word-blank").innerHTML = blankAndSuccesses.join(" ");
+    document.getElementById("word-blanks").innerHTML = blankAndSuccesses.join(" ");
 }
 
 // It's where we'll do all the comparisons for matches
@@ -104,7 +104,7 @@ function checkLetter(Letter) {
 else {
 
     //..then we add the letter to the list of wrong letters, and we subtract one of the guesses
-    wrongGusses.push(letter);
+    wrongGuesses.push(letter);
     numGuesses--;
 
     }
@@ -156,9 +156,24 @@ function roundComplete() {
     
 } 
 
+//Main Process (This is the code that controls what is actually now)
+//------------------------------------------------------------
 
 
+//Start the game 
+startGame();
 
+//Then initiate the function for capturing key clicks 
+document.onkeyup = function(event) {
 
+    // Converts Key clicks to lowercase letter
+    var letterGuessed = String.fromCharCode(event.keycode).toLowerCase
+    
+    //Run the code to check for correctness
+    checkLetter(letterGuessed);
+
+    //Runs the code after each round is done
+    roundComplete();
+};
 
 
