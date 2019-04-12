@@ -2,7 +2,7 @@
 // --------------------------------------------------------------
 
 // Array of Word Options (all lowercase)
-var wordsList = ["tesla", "ferrari", "mercedes"];
+var wordsList = ["ironman", "antman", "superman"];
 
 // Solution will be held here
 var chosenWord = "";
