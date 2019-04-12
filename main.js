@@ -1,9 +1,8 @@
-
 // GLOBAL VARIABLES (accesible by all funcitons)
 // --------------------------------------------------------------
 
 // Array of Word Options (all lowercase)
-var wordsList = ["superman", "ironman", "antman"];
+var wordsList = ["tesla", "ferrari", "mercedes"];
 
 // Solution will be held here
 var chosenWord = "";
@@ -140,7 +139,7 @@ function roundComplete() {
     document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
 
     // If we have gotten all the letters to match the solution...
-    if (lettersInChosenWord.toString() === blanksAndh
+    if (lettersInChosenWord.toString() === blanksAndSuccesses.toString()) {
 
         //...add to the win counter and give the user an alert
         winCounter++;
@@ -181,8 +180,7 @@ startGame();
 document.onkeyup = function(event) {
 
     // Converts all key clicks to lowercase letters
-    var letterGuessed = String.fromCharCode(event.keycode).toLowerCase(;)
-
+    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
     // Runs the code to check for correctness
     checkLetters(letterGuessed);
